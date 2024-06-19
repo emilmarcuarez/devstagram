@@ -41,13 +41,14 @@ class RegisterController extends Controller
         // Autenticar a un usuario. returna un bool si se autentico  o no. llena el objeto de auth si se autentica el usuario (si se registra) con los datos del mismo.
         auth()->attempt([
             'email'=>$request->email,
-            'password'=>$request->password
+            'password'=>$request->password,
+            'username' => $request->username
         ]);
 
         // otra forma de autenticar
         auth()->attempt($request->only('email', 'password'));
 
         // redireccionar
-        return redirect()->route('post.index');
+        return redirect()->route('post.index', auth()->user() );
     }
 }
