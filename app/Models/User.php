@@ -51,4 +51,8 @@ class User extends Authenticatable
         // de un usuario a multiples posts por medio de la clase que se envia
         return $this->hasMany(Post::class);
     }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
 }

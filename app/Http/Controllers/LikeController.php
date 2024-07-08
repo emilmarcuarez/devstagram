@@ -14,4 +14,10 @@ class LikeController extends Controller
 
         return back();
     }
+
+    public function destroy(Request $request, Post $post){
+        $request->user()->Likes()->where('post_id', $post->id)->delete();
+        // para que regrese a la pagina previa
+        return back();
+    }
 }
