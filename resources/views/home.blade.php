@@ -5,5 +5,7 @@
     Pagina principal
 @endsection
 @section('contenido')
-    que fue
+{{-- componnete --}}
+{{-- se esta pasando la variable post al componente, al archivo de app --}}
+     <x-Listar-post :posts="$posts"/>
 @endsection
