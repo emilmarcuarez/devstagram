@@ -6,6 +6,8 @@
         @stack('styles')
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <title>Devstagram - @yield('titulo')</title>
+   
+        @livewireStyles
     </head>
     <body class="bg-gray-100">
         
@@ -59,6 +61,7 @@
             {{-- eso de las llaves es para usar helpers que son funciones que podemos utilizar en laravel. En la pagina oficial hay varios con documentaciones --}}
             DevStagram - Todos los derechos reservados {{ now()->year }}
         </footer>
-     
+        
+     @livewireScripts
     </body>
 </html>
